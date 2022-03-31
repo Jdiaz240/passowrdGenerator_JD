@@ -9,13 +9,21 @@ const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 
 const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+var passLen = 12
+
+var password
+
 function generatePassword() {
-  var firstprompt = prompt("How many characters would you like your password?")
-    if (firstprompt =  )
+  var firstprompt = prompt("Please choose between 8 and 129 characters?");
+    
+  if (passLen < 12 || passLen >8) {
+    alert("Please enter a valid number of characters.");
+  }
 
-  var secondprompt = prompt("Would you like to include numbers?")
 
-  var thirdprompt = prompt("Would you like to include special characters?")
+  // var secondprompt = prompt("Would you like to include numbers?")
+
+  // var thirdprompt = prompt("Would you like to include special characters?")
 
 }
 
