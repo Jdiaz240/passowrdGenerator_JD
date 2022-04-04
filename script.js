@@ -9,61 +9,43 @@ const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 
 const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-var passWd = [];
+var password = [];
+
+var actPass = "";
 
 
 function generatePassword() {
   var firstprompt = prompt("Please choose between 8 to 129 characters?");    
   if (firstprompt <= 8 || firstprompt >= 129) {
    return alert("Please enter a valid number of characters.");
-   } 
+  } 
 
   var secondprompt = confirm("Would you like to include numbers"); 
   if (secondprompt = true) {
-    passWd = passWd.concat(numberChars);
+    password = password.concat(numberChars);
   } 
   
   var thirdprompt = confirm("would you like to include special characters?");
   if (thirdprompt = true) {
-    passWd = passWd.concat(numberChars,specialChars);
+    password = password.concat(specialChars);
   }
 
-   var fourthprompt = confirm("Would you like to include upercase letters?");
-   if (fourthprompt = true) {
-     passWd = passWd.concat(numberChars,specialChars,uppercase);
-   }
+  var fourthprompt = confirm("Would you like to include upercase letters?");
+  if (fourthprompt = true) {
+    password = password.concat(uppercase);
+  }
 
-   var finalprompt = confirm("would you like to include lowercase letters?");
-   if (finalprompt = true) {
-     passWd = passWd.concat(numberChars,specialChars,uppercase,lowercase);
-   }
-  
+  var finalprompt = confirm("would you like to include lowercase letters?");
+  if (finalprompt = true) {
+    password = password.concat(lowercase);
+  }
+  for (var i = 0; i <= firstprompt; i++) {
+    actPass += password[Math.floor(Math.random()*(password.length))];
+    console.log(Math.floor(Math.random()*(password.length)));
+    console.log(actPass);
+  }
+  return actPass;
 }
-
- 
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
@@ -71,10 +53,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
-  
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
