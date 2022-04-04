@@ -9,38 +9,55 @@ const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 
 const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+var passWd = [];
 
 
 function generatePassword() {
-  var firstprompt = prompt("Please choose between 8 to 129 characters?");
+  var firstprompt = prompt("Please choose between 8 to 129 characters?");    
+  if (firstprompt <= 8 || firstprompt >= 129) {
+   return alert("Please enter a valid number of characters.");
+   } 
+
   var secondprompt = confirm("Would you like to include numbers"); 
-  var thirdprompt = confirm("would you like to include special characters?");
-  var fourthprompt = confirm("Would you like to include upercase letters?");
-  var finalprompt = confirm("would you like to include lowercase letters?");
-
-    
-  if (password >= 8 && password <= 129) {
-    alert(secondprompt);
-   }
-   else { alert("Please enter a valid number of characters.") 
-   }
-  
   if (secondprompt) {
-    alert(thirdprompt)
-  }
-
+    passWd = concat(numberChars);
+  } 
+  
+  var thirdprompt = confirm("would you like to include special characters?");
   if (thirdprompt) {
-    alert(fourthprompt)
+    passWd = concat(numberChars,specialChars);
   }
 
-  if (fourthprompt) {
-    alert(finalprompt)
-  }
+   var fourthprompt = confirm("Would you like to include upercase letters?");
+   if (fourthprompt) {
+     passWd = concat(numberChars,specialChars,uppercase);
+   }
+
+   var finalprompt = confirm("would you like to include lowercase letters?");
+   if (finalprompt) {
+     passWd = concat(numberChars,specialChars,uppercase,lowercase);
+   }
+  // if (secondprompt) {
+  //   alert(thirdprompt)
+  // } else { return firstprompt;
+  
+  // }
+
+  // if (thirdprompt) {
+  //   alert(fourthprompt)
+  // }
+
+  // if (fourthprompt) {
+  //   alert(finalprompt)
+  // }
   
   
 }
 
  
+  
+  
+  
 
 
 
