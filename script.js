@@ -19,38 +19,24 @@ function generatePassword() {
    } 
 
   var secondprompt = confirm("Would you like to include numbers"); 
-  if (secondprompt) {
-    passWd = concat(numberChars);
+  if (secondprompt = true) {
+    passWd = passWd.concat(numberChars);
   } 
   
   var thirdprompt = confirm("would you like to include special characters?");
-  if (thirdprompt) {
-    passWd = concat(numberChars,specialChars);
+  if (thirdprompt = true) {
+    passWd = passWd.concat(numberChars,specialChars);
   }
 
    var fourthprompt = confirm("Would you like to include upercase letters?");
-   if (fourthprompt) {
-     passWd = concat(numberChars,specialChars,uppercase);
+   if (fourthprompt = true) {
+     passWd = passWd.concat(numberChars,specialChars,uppercase);
    }
 
    var finalprompt = confirm("would you like to include lowercase letters?");
-   if (finalprompt) {
-     passWd = concat(numberChars,specialChars,uppercase,lowercase);
+   if (finalprompt = true) {
+     passWd = passWd.concat(numberChars,specialChars,uppercase,lowercase);
    }
-  // if (secondprompt) {
-  //   alert(thirdprompt)
-  // } else { return firstprompt;
-  
-  // }
-
-  // if (thirdprompt) {
-  //   alert(fourthprompt)
-  // }
-
-  // if (fourthprompt) {
-  //   alert(finalprompt)
-  // }
-  
   
 }
 
